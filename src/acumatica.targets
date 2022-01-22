@@ -1,0 +1,9 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!-- CTC SETTINGS -->
+<PropertyGroup>
+	  <AcumaticaSiteDir>C:\Acumatica\Sites\Hackathon2022\</AcumaticaSiteDir>
+</PropertyGroup>
+<!-- CTC SETTINGS END -->
+
+
+</Project>

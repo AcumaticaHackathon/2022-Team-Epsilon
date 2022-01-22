@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/.vs
+/src/FileService.Core/bin
+/src/FileService.Core/obj
+/src/FileService.Sharepoint/bin
+/src/FileService.Sharepoint/obj

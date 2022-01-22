@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\acumatica.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA70F829-BB1C-46B7-9927-484CB59B3380}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileService</RootNamespace>
+    <AssemblyName>FileService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Autofac">
+      <HintPath>$(AcumaticaSiteDir)Bin\Autofac.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Data.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="PX.Common">
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Common.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="PX.Common.Std">
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Common.Std.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Objects.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acu\DAC\ExternalFile.cs" />
+    <Compile Include="Acu\DAC\FileEntityMapping.cs" />
+    <Compile Include="Acu\Extensions\FileServiceExtensions.cs" />
+    <Compile Include="Acu\FileGraphExtension.cs" />
+    <Compile Include="Acu\DAC\FileServicePreferences.cs" />
+    <Compile Include="Autofac\FileServiceModule.cs" />
+    <Compile Include="Core\IExternalFileServiceProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <CallTarget Targets="BuildMainRelease;BuildDebug" />
+  </Target>
+  <Target Name="BuildDebug" Condition="'$(Configuration)' == 'Debug'">
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Message Text="------------------   COPYING ERP FILES  ---------------------" Importance="high" />
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AcumaticaSiteDir)Bin\" SkipUnchangedFiles="False" />
+  </Target>
+  <Target Name="BuildMainRelease" Condition="'$(Configuration)' == 'Release'">
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Message Text="-------------   PACKING NGCTC MAIN RELEASE   ----------------" Importance="high" />
+    <Message Text="-------------------------------------------------------------" Importance="high" />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AcumaticaSiteDir)Bin\" SkipUnchangedFiles="False" />
+  </Target>
+</Project>
