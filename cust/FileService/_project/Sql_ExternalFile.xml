@@ -1,0 +1,8 @@
+﻿<Sql TableName="ExternalFile" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ExternalFile">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="RefNoteId" type="UniqueIdentifier" />
+  <col name="FileName" type="NVarChar(256)" />
+  <col name="Path" type="NVarChar(256)" />
+</table>]]></CDATA>
+</Sql>

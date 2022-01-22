@@ -1,0 +1,6 @@
+﻿<Sql TableName="FileServicePreferences" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="FileServicePreferences">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PluginType" type="NVarChar(516)" nullable="true" />
+</table>]]></CDATA>
+</Sql>

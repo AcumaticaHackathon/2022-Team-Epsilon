@@ -7,3 +7,5 @@
 /src/FileService.Core/obj
 /src/FileService.Sharepoint/bin
 /src/FileService.Sharepoint/obj
+/.vs
+/cust/FileService/Bin

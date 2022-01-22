@@ -61,13 +61,21 @@
       <HintPath>$(AcumaticaSiteDir)Bin\PX.Objects.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
+    <Reference Include="PX.Web.Customization">
+      <HintPath>$(AcumaticaSiteDir)Bin\PX.Web.Customization.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acu\DAC\ExternalFile.cs" />
     <Compile Include="Acu\DAC\FileEntityMapping.cs" />
+    <Compile Include="Acu\Decorator\EntityTypes.cs" />
     <Compile Include="Acu\Extensions\FileServiceExtensions.cs" />
     <Compile Include="Acu\FileGraphExtension.cs" />
     <Compile Include="Acu\DAC\FileServicePreferences.cs" />
+    <Compile Include="Acu\FileServiceCustMaint.cs" />
+    <Compile Include="Acu\FileServicesPreferencesMaint.cs" />
+    <Compile Include="Acu\Implementations.cs" />
     <Compile Include="Autofac\FileServiceModule.cs" />
     <Compile Include="Core\IExternalFileServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

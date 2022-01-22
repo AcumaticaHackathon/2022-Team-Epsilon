@@ -12,6 +12,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{4FAC9CBE-EB5
 		Sql\Db.sql = Sql\Db.sql
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Hackathon2022", "http://localhost/Hackathon2022", "{5C7224D5-5D78-4E1F-A5A4-B11B7F70901D}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/Hackathon2022"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Acumatica\Sites\Hackathon2022\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Hackathon2022\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Hackathon2022"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Acumatica\Sites\Hackathon2022\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Hackathon2022\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\Acumatica\Sites\Hackathon2022\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +47,10 @@ Global
 		{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7224D5-5D78-4E1F-A5A4-B11B7F70901D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7224D5-5D78-4E1F-A5A4-B11B7F70901D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7224D5-5D78-4E1F-A5A4-B11B7F70901D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7224D5-5D78-4E1F-A5A4-B11B7F70901D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
