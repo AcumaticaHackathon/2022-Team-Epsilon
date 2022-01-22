@@ -25,8 +25,19 @@
         </layout>
         <data>
             <SiteMap>
-                <row Position="21517" Title="File Service Preferences" Url="~/Pages/SM/SMLS1000.aspx" ScreenID="SMLS1000" NodeID="961bae0d-22c6-49b7-8409-7637ce13af64" ParentID="00000000-0000-0000-0000-000000000000" />
+                <row Position="21517" Title="File Service Preferences" Url="~/Pages/SM/SMLS1000.aspx" ScreenID="SMLS1000" NodeID="961bae0d-22c6-49b7-8409-7637ce13af64" ParentID="00000000-0000-0000-0000-000000000000">
+                    <MUIScreen IsPortal="0" WorkspaceID="51ce11c7-dfb9-4637-8c8a-917b358e413c" Order="455" SubcategoryID="256f0d9d-3e83-49ad-9692-2199c0897d9b" />
+                </row>
             </SiteMap>
+            <MUIWorkspace>
+                <row IsPortal="0" WorkspaceID="51ce11c7-dfb9-4637-8c8a-917b358e413c" Order="800" Title="System Management" Icon="poll" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" ScreenID="WSSM0000" IsSystem="0" />
+            </MUIWorkspace>
+            <MUISubcategory>
+                <row IsPortal="0" SubcategoryID="256f0d9d-3e83-49ad-9692-2199c0897d9b" Order="1391.5" Name="System Preferences" Icon="" IsSystem="0" />
+            </MUISubcategory>
+            <MUIArea>
+                <row IsPortal="0" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" Order="30" Name="Configuration" />
+            </MUIArea>
         </data>
     </data-set>
 </SiteMapNode>

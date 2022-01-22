@@ -10,7 +10,7 @@ namespace FileService.Acu.DAC
     public class ExternalFile : IBqlTable
     {
         #region RefNoteId
-        [PXDBGuid()]
+        [PXDBGuid(IsKey = true)]
         public virtual Guid? RefNoteId { get; set; }
         public abstract class refNoteId : BqlGuid.Field<refNoteId> { }
         #endregion

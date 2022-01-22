@@ -7,7 +7,9 @@
 // ----------------------------------------------------------------------------------
 #endregion
 
+using System;
 using PX.Data;
+using PX.Objects.PM;
 
 namespace FileService.Acu.Decorator
 {
@@ -22,6 +24,21 @@ namespace FileService.Acu.Decorator
         })
         {
             
+        }
+
+        public static string GetType(IBqlTable row, bool throwException = false)
+        {
+            switch (row)
+            {
+                case PMProject:
+                    return Project;
+                default:
+                    if (throwException)
+                        throw new NotImplementedException($"{row.GetType().Name} is not implemented");
+                    break;
+            }
+
+            return "";
         }
     }
 }

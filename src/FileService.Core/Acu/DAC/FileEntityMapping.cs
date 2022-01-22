@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using FileService.Acu.Decorator;
 using PX.Data;
 using PX.Data.BQL;
 
@@ -18,7 +19,8 @@ namespace FileService.Acu.DAC
         #endregion
 
         #region Entity
-        [PXDBString(2)]
+        [PXDBString(EntityTypes.Length, IsKey = true)]
+        [EntityTypes]
         [PXUIField(DisplayName = "Entity")]
         public virtual string Entity { get; set; }
         public abstract class entity : BqlString.Field<entity> { }

@@ -15,7 +15,7 @@ CREATE TABLE ExternalFile (
 CREATE TABLE FileEntityMapping (
     CompanyId int NOT NULL,
     Active bit NOT NULL DEFAULT(0),
-    Entity varchar(2) NOT NULL,
+    Entity varchar(4) NOT NULL,
     Mapping nvarchar(512) NULL,
 );
 
