@@ -24,7 +24,7 @@ namespace FileService.Acu.DAC
 
         #region Path
         [PXDBString(256, IsUnicode = true)]
-        [PXUIField(DisplayName = "DisplayName")]
+        [PXUIField(DisplayName = "Path")]
         public virtual string Path { get; set; }
         public abstract class path : BqlString.Field<path> { }
         #endregion

@@ -43,15 +43,15 @@ namespace FileService.Acu
             e.Row.RefNoteId = Base.Caches<U>().GetValue<V>(Base.Caches<U>().Current) as Guid?;
         }
 
-        public PXAction<U> ActionOpenFiles;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments", MapEnableRights = PXCacheRights.Select)]
+        public PXAction<U> ActionOpenFilesWindow;
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments")]
         public void actionOpenFilesWindow()
         {
             ExternalFiles.AskExt(true);
         }
 
         public PXAction<U> ActionRedirectToFile;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "View File", MapEnableRights = PXCacheRights.Select)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "View File")]
         public void actionRedirectToFile()
         {
             var file = ExternalFiles.Current;
@@ -61,8 +61,19 @@ namespace FileService.Acu
             throw new PXRedirectToUrlException(url, "");
         }
 
+        public PXAction<U> ActionRedirectToDirectory;
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "View Directory")]
+        public void actionRedirectToDirectory()
+        {
+            var file = ExternalFiles.Current;
+            IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
+            string url = provider.OpenFile(file.Path);
+
+            throw new PXRedirectToUrlException(url, "");
+        }
+
         public PXAction<U> ActionDownloadFile;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Download File", MapEnableRights = PXCacheRights.Select)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Download File")]
         public void actionDownloadFile()
         {
             var fileRecord = ExternalFiles.Current;
@@ -76,7 +87,7 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionUploadFile;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload", MapEnableRights = PXCacheRights.Insert)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload")]
         public void actionUploadFile()
         {
             if (FileServicePreferences.AskExt() != WebDialogResult.OK) return;
@@ -98,6 +109,13 @@ namespace FileService.Acu
             System.Web.HttpContext.Current.Session.Remove(UploadFilesSessionKey);
 
             Base.Actions.PressSave();
+        }
+
+        public PXAction<U> ActionRefreshFileList;
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload")]
+        public void actionRefreshFileList()
+        {
+            
         }
 
         private string GetEntityType()

@@ -1,11 +1,10 @@
 <px:PXSmartPanel runat="server" CreateOnDemand="True" Key="ExternalFiles" AutoRepaint="True" ID="pnlExternalFiles" Caption="Caption" CaptionVisible="True" AutoReload="True" LoadOnDemand="True" Width="50%">
-    <px:PXGrid ID="frmExternalFiles" runat="server" DataSourceID="ds" Width="100%" Height="100%">
+    <px:PXGrid ID="frmExternalFiles" runat="server" DataSourceID="ds" Width="100%" Height="100%" SkinID="Inquire">
         <Levels>
             <px:PXGridLevel DataMember="ExternalFiles">
                 <Columns>
-                    <px:PXGridColumn DataField="Active" />
-                    <px:PXGridColumn DataField="Entity" />
-                    <px:PXGridColumn DataField="Mapping" />
+                    <px:PXGridColumn DataField="FileName" LinkCommand="ActionRedirectToFile" />
+                    <px:PXGridColumn DataField="Path" />
                 </Columns>
             </px:PXGridLevel>
         </Levels>
@@ -14,9 +13,6 @@
             <CustomItems>
                 <px:PXToolBarButton>
                     <AutoCallBack Command="ActionUploadFile" Target="ds"/>
-                </px:PXToolBarButton>
-                <px:PXToolBarButton>
-                    <AutoCallBack Command="ActionRedirectToFile" Target="ds"/>
                 </px:PXToolBarButton>
                 <px:PXToolBarButton>
                     <AutoCallBack Command="ActionDownloadFile" Target="ds"/>

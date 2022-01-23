@@ -22,7 +22,7 @@ namespace FileService.Acu.Implementation
             {
                 def.WithActions(actions =>
                 {
-                    actions.AddNew(nameof(ActionOpenFiles));
+                    actions.AddNew(nameof(ActionOpenFilesWindow));
                     actions.AddNew(nameof(ActionDownloadFile));
                     actions.AddNew(nameof(ActionRedirectToFile));
                     actions.AddNew(nameof(ActionUploadFile));
@@ -36,7 +36,7 @@ namespace FileService.Acu.Implementation
                             return flowState
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
+                                    actions.Add(nameof(ActionOpenFilesWindow), config => config.IsDuplicatedInToolbar());
                                     actions.Add(nameof(ActionDownloadFile));
                                     actions.Add(nameof(ActionRedirectToFile));
                                     actions.Add(nameof(ActionUploadFile));
@@ -47,7 +47,7 @@ namespace FileService.Acu.Implementation
                             return flowState
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
+                                    actions.Add(nameof(ActionOpenFilesWindow), config => config.IsDuplicatedInToolbar());
                                     actions.Add(nameof(ActionDownloadFile));
                                     actions.Add(nameof(ActionRedirectToFile));
                                     actions.Add(nameof(ActionUploadFile));
@@ -58,7 +58,7 @@ namespace FileService.Acu.Implementation
                             return flowState
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
+                                    actions.Add(nameof(ActionOpenFilesWindow), config => config.IsDuplicatedInToolbar());
                                     actions.Add(nameof(ActionDownloadFile));
                                     actions.Add(nameof(ActionRedirectToFile));
                                     actions.Add(nameof(ActionUploadFile));
@@ -69,7 +69,7 @@ namespace FileService.Acu.Implementation
                             return flowState
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
+                                    actions.Add(nameof(ActionOpenFilesWindow), config => config.IsDuplicatedInToolbar());
                                     actions.Add(nameof(ActionDownloadFile));
                                     actions.Add(nameof(ActionRedirectToFile));
                                     actions.Add(nameof(ActionUploadFile));
@@ -80,7 +80,7 @@ namespace FileService.Acu.Implementation
                             return flowState
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
+                                    actions.Add(nameof(ActionOpenFilesWindow), config => config.IsDuplicatedInToolbar());
                                     actions.Add(nameof(ActionDownloadFile));
                                     actions.Add(nameof(ActionRedirectToFile));
                                     actions.Add(nameof(ActionUploadFile));

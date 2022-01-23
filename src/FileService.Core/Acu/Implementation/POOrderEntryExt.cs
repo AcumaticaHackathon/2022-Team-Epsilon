@@ -21,12 +21,11 @@ namespace FileService.Acu.Implementation
             {
                 def.WithActions(actions =>
                 {
-                    actions.AddNew(nameof(ActionOpenFiles));
+                    actions.AddNew(nameof(ActionOpenFilesWindow));
                     actions.AddNew(nameof(ActionDownloadFile));
                     actions.AddNew(nameof(ActionRedirectToFile));
                     actions.AddNew(nameof(ActionUploadFile));
-                });
-                def.UpdateDefaultFlow(d =>
+                }).UpdateDefaultFlow(d =>
                 {
                     d.WithFlowStates(states =>
                     {
@@ -35,10 +34,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.pendingPrint>(state =>
@@ -46,10 +42,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.pendingEmail>(state =>
@@ -57,10 +50,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.open>(state =>
@@ -68,10 +58,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.completed>(state =>
@@ -79,10 +66,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.cancelled>(state =>
@@ -90,10 +74,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                         states.Update<POOrderStatus.closed>(state =>
@@ -101,10 +82,7 @@ namespace FileService.Acu.Implementation
                             return state
                                 .WithActions(actions =>
                                 {
-                                    actions.Add(nameof(ActionOpenFiles), config => config.IsDuplicatedInToolbar());
-                                    actions.Add(nameof(ActionDownloadFile));
-                                    actions.Add(nameof(ActionRedirectToFile));
-                                    actions.Add(nameof(ActionUploadFile));
+                                    actions.Add(nameof(ActionOpenFilesWindow));
                                 });
                         });
                     });
