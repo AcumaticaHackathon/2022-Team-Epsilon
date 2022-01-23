@@ -75,6 +75,7 @@
                                         </PXToolBarButton>
                                     </AddItem>
                                 </Children>
+                                <Prop Key="SyncPosition" Value="True" />
                             </PXGrid>
                         </AddItem>
                         <AddItem>
@@ -179,6 +180,7 @@
                                         </PXToolBarButton>
                                     </AddItem>
                                 </Children>
+                                <Prop Key="SyncPosition" Value="True" />
                             </PXGrid>
                         </AddItem>
                         <AddItem>
@@ -284,6 +286,7 @@
                                     </AddItem>
                                 </Children>
                                 <Prop Key="ActionBar.Actions.Refresh.Enabled" Value="False" />
+                                <Prop Key="SyncPosition" Value="True" />
                             </PXGrid>
                         </AddItem>
                         <AddItem>

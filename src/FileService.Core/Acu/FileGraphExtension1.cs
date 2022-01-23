@@ -66,7 +66,7 @@ namespace FileService.Acu
         {
             var file = ExternalFiles.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
-            string url = provider.OpenFile(file.Path);
+            string url = provider.OpenFile(file.FileName, file.Path);
 
             throw new PXRedirectToUrlException(url, "");
         }
@@ -77,7 +77,7 @@ namespace FileService.Acu
         {
             var file = ExternalFiles.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
-            string url = provider.OpenFile(file.Path);
+            string url = provider.OpenFile(file.FileName, file.Path);
 
             throw new PXRedirectToUrlException(url, "");
         }
@@ -107,7 +107,7 @@ namespace FileService.Acu
 
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string path = PathBuilder.GetPath(GetEntityType(), Base);
-            provider.UploadFile(path, stream);
+            provider.UploadFile(info.FullName, path, stream);
 
             ExternalFiles.Insert(new ExternalFile()
             {
@@ -137,7 +137,8 @@ namespace FileService.Acu
                     ExternalFiles.Insert(new ExternalFile()
                     {
                         FileName = listing.FileName,
-                        Path = listing.Directory
+                        Path = listing.Directory,
+                        Entity = GetEntityType()
                     });
                 }
                 else

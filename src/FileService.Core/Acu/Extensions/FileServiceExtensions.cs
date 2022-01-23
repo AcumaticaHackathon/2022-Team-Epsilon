@@ -12,7 +12,7 @@ namespace FileService.Acu.Extensions
             if (string.IsNullOrWhiteSpace(preferences.PluginType))
                 throw new InvalidOperationException("No data fetcher type specified");
 
-            var type = Type.GetType($"{preferences.PluginType}, FileService");
+            var type = Type.GetType($"{preferences.PluginType}, FileService.OneDrive");
             if (type is null)
                 throw new InvalidOperationException("Type not found");
 

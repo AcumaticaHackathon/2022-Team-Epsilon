@@ -11,14 +11,21 @@ namespace FileService.Core
         /// </summary>
         /// <param name="path">The path where to save the file</param>
         /// <param name="fileStream">The file's stream of data</param>
-        void UploadFile(string path, Stream fileStream);
+        void UploadFile(string fileName, string path, Stream fileStream);
 
         /// <summary>
         /// Returns a URL where the file can be viewed
         /// </summary>
         /// <param name="path">The location of the file on the external resource</param>
         /// <returns></returns>
-        string OpenFile(string path);
+        string OpenFile(string fileName, string path);
+
+        /// <summary>
+        /// Returns a URL where the file can be viewed
+        /// </summary>
+        /// <param name="path">The location of the file on the external resource</param>
+        /// <returns></returns>
+        string OpenDirectory(string path);
 
         /// <summary>
         /// Gets a files data so it can be downloaded
