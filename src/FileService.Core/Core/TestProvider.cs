@@ -6,9 +6,9 @@ namespace FileService.Core
 {
     public class TestProvider : IExternalFileServiceProvider
     {
-        public void UploadFile(string path, Stream fileStream)
+        public void UploadFile(string fileName, string path, Stream fileStream)
         {
-            
+            throw new System.NotImplementedException();
         }
 
         public string OpenFile(string path)

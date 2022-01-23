@@ -107,7 +107,7 @@ namespace FileService.Acu
 
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string path = PathBuilder.GetPath(GetEntityType(), Base);
-            provider.UploadFile(path, stream);
+            provider.UploadFile(info.FullName, path, stream);
 
             ExternalFiles.Insert(new ExternalFile()
             {
