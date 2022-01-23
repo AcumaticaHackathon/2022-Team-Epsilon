@@ -53,6 +53,8 @@ namespace FileService.Acu
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments")]
         public void actionOpenFilesWindow()
         {
+            ActionRefreshFileList.Press();
+
             if (ExternalFiles.AskExt(true) != WebDialogResult.OK) return;
 
             Base.Actions.PressSave();

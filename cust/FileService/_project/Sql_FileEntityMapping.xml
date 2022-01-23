@@ -2,7 +2,7 @@
     <CDATA name="TableSchemaXml"><![CDATA[<table name="FileEntityMapping">
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="Active" type="Bit" default="Zero" />
-  <col name="Entity" type="VarChar(2)" />
+  <col name="Entity" type="VarChar(4)" />
   <col name="Mapping" type="NVarChar(512)" nullable="true" />
 </table>]]></CDATA>
 </Sql>

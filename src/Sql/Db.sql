@@ -6,6 +6,7 @@ DROP TABLE FileServicePreferences;
 
 CREATE TABLE ExternalFile (
     CompanyId int NOT NULL,
+    FileId bigint NOT NULL IDENTITY,
     RefNoteId uniqueidentifier NOT NULL,
     FileName nvarchar(256) NOT NULL,
     Path nvarchar(256) NOT NULL,
