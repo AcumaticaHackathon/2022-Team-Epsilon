@@ -84,7 +84,9 @@
     <Compile Include="Acu\Implementation\ProjectEntryExt.cs" />
     <Compile Include="Acu\Implementation\POOrderEntryExt.cs" />
     <Compile Include="Autofac\FileServiceModule.cs" />
+    <Compile Include="Core\DirectoryListing.cs" />
     <Compile Include="Core\IExternalFileServiceProvider.cs" />
+    <Compile Include="Core\TestProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

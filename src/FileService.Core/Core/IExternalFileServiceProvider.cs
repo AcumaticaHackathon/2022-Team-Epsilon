@@ -38,6 +38,6 @@ namespace FileService.Core
         /// </summary>
         /// <param name="path">The location of the directory on the external resource</param>
         /// <returns></returns>
-        IEnumerable<string> ListDirectory(string path);
+        IEnumerable<DirectoryListing> ListDirectory(string path);
     }
 }

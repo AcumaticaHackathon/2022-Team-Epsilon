@@ -12,6 +12,7 @@ using PX.Data;
 using PX.Data.BQL;
 using PX.Data.WorkflowAPI;
 using PX.SM;
+using PX.Web.UI;
 
 namespace FileService.Acu
 {
@@ -92,7 +93,7 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionUploadFile;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload")]
+        [PXButton(CommitChanges = true, ImageKey = Sprite.Main.AddNew), PXUIField(DisplayName = "Upload")]
         public void actionUploadFile()
         {
             if (FileServicePreferences.AskExt() != WebDialogResult.OK) return;
@@ -117,7 +118,7 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionRefreshFileList;
-        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload")]
+        [PXButton(CommitChanges = true, ImageKey = Sprite.Main.Refresh), PXUIField(DisplayName = "Upload")]
         public void actionRefreshFileList()
         {
             
