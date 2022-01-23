@@ -16,14 +16,14 @@ using PX.Web.UI;
 
 namespace FileService.Acu
 {
-    public class FileGraphExtension<T, U, V> : PXGraphExtension<T>
+    public class FileGraphExtension3<T, U, V> : PXGraphExtension<T>
     where T : PXGraph
     where U : class, IBqlTable, new()
     where V : BqlGuid.Field<V>
     {
         private const string UploadFilesSessionKey = "LekkerExternalFileProvider";
 
-        public PXSelect<ExternalFile, Where<ExternalFile.refNoteId, Equal<Current<V>>>> ExternalFiles;
+        public PXSelect<ExternalFile, Where<ExternalFile.refNoteId, Equal<Current<V>>>> ExternalFiles3;
         public PXSetup<FileServicePreferences> FileServicePreferences;
 
         [InjectDependency]
@@ -31,7 +31,7 @@ namespace FileService.Acu
 
         public override void Initialize()
         {
-            ExternalFiles.AllowUpdate = false;
+            ExternalFiles3.AllowUpdate = false;
         }
 
         protected void _(Events.RowSelected<U> e)
@@ -49,44 +49,44 @@ namespace FileService.Acu
             e.Row.RefNoteId = Base.Caches<U>().GetValue<V>(Base.Caches<U>().Current) as Guid?;
         }
 
-        public PXAction<U> ActionOpenFilesWindow;
+        public PXAction<U> ActionOpenFilesWindow3;
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments")]
-        public void actionOpenFilesWindow()
+        public void actionOpenFilesWindow3()
         {
-            ActionRefreshFileList.Press();
+            ActionRefreshFileList3.Press();
 
-            if (ExternalFiles.AskExt(true) != WebDialogResult.OK) return;
+            if (ExternalFiles3.AskExt(true) != WebDialogResult.OK) return;
 
             Base.Actions.PressSave();
         }
 
-        public PXAction<U> ActionRedirectToFile;
+        public PXAction<U> ActionRedirectToFile3;
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "View File")]
-        public void actionRedirectToFile()
+        public void actionRedirectToFile3()
         {
-            var file = ExternalFiles.Current;
+            var file = ExternalFiles3.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string url = provider.OpenFile(file.Path);
 
             throw new PXRedirectToUrlException(url, "");
         }
 
-        public PXAction<U> ActionRedirectToDirectory;
+        public PXAction<U> ActionRedirectToDirectory3;
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "View Directory")]
-        public void actionRedirectToDirectory()
+        public void actionRedirectToDirectory3()
         {
-            var file = ExternalFiles.Current;
+            var file = ExternalFiles3.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string url = provider.OpenFile(file.Path);
 
             throw new PXRedirectToUrlException(url, "");
         }
 
-        public PXAction<U> ActionDownloadFile;
+        public PXAction<U> ActionDownloadFile3;
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "Download File")]
-        public void actionDownloadFile()
+        public void actionDownloadFile3()
         {
-            var fileRecord = ExternalFiles.Current;
+            var fileRecord = ExternalFiles3.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             var fileStream = provider.GetFile(fileRecord.Path);
             using var memoryStream = new MemoryStream();
@@ -96,9 +96,9 @@ namespace FileService.Acu
                 new PX.SM.FileInfo(fileRecord.FileName, default, memoryStream.ToArray()), true);
         }
 
-        public PXAction<U> ActionUploadFile;
+        public PXAction<U> ActionUploadFile3;
         [PXButton(CommitChanges = true, ImageKey = Sprite.Main.AddNew), PXUIField(DisplayName = "Upload")]
-        public void actionUploadFile()
+        public void actionUploadFile3()
         {
             if (FileServicePreferences.AskExt() != WebDialogResult.OK) return;
 
@@ -109,31 +109,32 @@ namespace FileService.Acu
             string path = PathBuilder.GetPath(GetEntityType(), Base);
             provider.UploadFile(path, stream);
 
-            ExternalFiles.Insert(new ExternalFile()
+            ExternalFiles3.Insert(new ExternalFile()
             {
                 Path = path,
-                FileName = info.FullName
+                FileName = info.FullName,
+                Entity = GetEntityType()
             });
 
             //Removing file from session to save memory
             System.Web.HttpContext.Current.Session.Remove(UploadFilesSessionKey);
         }
 
-        public PXAction<U> ActionRefreshFileList;
+        public PXAction<U> ActionRefreshFileList3;
         [PXButton(CommitChanges = true, ImageKey = Sprite.Main.Refresh), PXUIField(DisplayName = "Refresh")]
-        public void actionRefreshFileList()
+        public void actionRefreshFileList3()
         {
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string path = PathBuilder.GetPath(GetEntityType(), Base);
 
-            var acuFiles = ExternalFiles.SelectMain().ToList();
+            var acuFiles = ExternalFiles3.SelectMain().ToList();
 
             foreach (DirectoryListing listing in provider.ListDirectory(path))
             {
                 var match = acuFiles.FirstOrDefault(a => a.FileName == listing.FileName && a.Path == listing.Directory);
                 if (match is null)
                 {
-                    ExternalFiles.Insert(new ExternalFile()
+                    ExternalFiles3.Insert(new ExternalFile()
                     {
                         FileName = listing.FileName,
                         Path = listing.Directory
@@ -147,7 +148,7 @@ namespace FileService.Acu
 
             foreach (ExternalFile file in acuFiles)
             {
-                ExternalFiles.Delete(file);
+                ExternalFiles3.Delete(file);
             }
         }
 

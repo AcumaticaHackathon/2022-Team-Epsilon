@@ -5,6 +5,214 @@
                 <PXSmartPanel TypeFullName="PX.Web.UI.PXSmartPanel">
                     <Prop Key="Virtual:ApplyStylesheetSkin" />
                     <Prop Key="Width" Value="50%" />
+                    <Prop Key="ID" Value="pnlExternalFiles3" />
+                    <Prop Key="LoadOnDemand" Value="True" />
+                    <Prop Key="CreateOnDemand" Value="True" />
+                    <Prop Key="AutoReload" Value="True" />
+                    <Prop Key="AutoRepaint" Value="True" />
+                    <Prop Key="CaptionVisible" Value="True" />
+                    <Prop Key="Caption" Value="External Files" />
+                    <Prop Key="Key" Value="ExternalFiles3" />
+                    <Children Key="Controls">
+                        <AddItem>
+                            <PXGrid TypeFullName="PX.Web.UI.PXGrid">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="Height" Value="100%" />
+                                <Prop Key="SkinID" Value="Inquire" />
+                                <Prop Key="Width" Value="100%" />
+                                <Prop Key="ID" Value="frmExternalFiles3" />
+                                <Prop Key="AutoSize.Enabled" Value="True" />
+                                <Prop Key="AutoSize.Container" Value="Parent" />
+                                <Prop Key="ActionBar.Actions.Refresh.Enabled" Value="False" />
+                                <Prop Key="DataSourceID" Value="ds" />
+                                <Children Key="Levels">
+                                    <AddItem>
+                                        <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
+                                            <Prop Key="DataMember" Value="ExternalFiles3" />
+                                            <Children Key="Columns">
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="Entity" />
+                                                        <Prop Key="Width" Value="70" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="Path" />
+                                                        <Prop Key="Width" Value="280" />
+                                                        <Prop Key="LinkCommand" Value="ActionRedirectToDirectory3" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="FileName" />
+                                                        <Prop Key="Width" Value="280" />
+                                                        <Prop Key="LinkCommand" Value="ActionRedirectToFile3" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                            </Children>
+                                        </PXGridLevel>
+                                    </AddItem>
+                                </Children>
+                                <Children Key="ActionBar.CustomItems">
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionRefreshFileList3" />
+                                            <Prop Key="ImageKey" Value="Refresh" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionUploadFile3" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionDownloadFile3" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                </Children>
+                            </PXGrid>
+                        </AddItem>
+                        <AddItem>
+                            <PXPanel TypeFullName="PX.Web.UI.PXPanel">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="SkinID" Value="Buttons" />
+                                <Prop Key="ID" Value="pnlExternalFilesBtn3" />
+                                <Children Key="Controls">
+                                    <AddItem>
+                                        <PXButton TypeFullName="PX.Web.UI.PXButton">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="Text" Value="OK" />
+                                            <Prop Key="DialogResult" Value="OK" />
+                                            <Prop Key="ID" Value="btnOKExternalFiles3" />
+                                        </PXButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXButton TypeFullName="PX.Web.UI.PXButton">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="Text" Value="Cancel" />
+                                            <Prop Key="DialogResult" Value="Cancel" />
+                                            <Prop Key="ID" Value="btnCancelExternalFiles3" />
+                                        </PXButton>
+                                    </AddItem>
+                                </Children>
+                            </PXPanel>
+                        </AddItem>
+                    </Children>
+                </PXSmartPanel>
+            </AddItem>
+            <AddItem>
+                <PXSmartPanel TypeFullName="PX.Web.UI.PXSmartPanel">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="Width" Value="50%" />
+                    <Prop Key="ID" Value="pnlExternalFiles2" />
+                    <Prop Key="LoadOnDemand" Value="True" />
+                    <Prop Key="CreateOnDemand" Value="True" />
+                    <Prop Key="AutoReload" Value="True" />
+                    <Prop Key="AutoRepaint" Value="True" />
+                    <Prop Key="CaptionVisible" Value="True" />
+                    <Prop Key="Caption" Value="External Files" />
+                    <Prop Key="Key" Value="ExternalFiles2" />
+                    <Children Key="Controls">
+                        <AddItem>
+                            <PXGrid TypeFullName="PX.Web.UI.PXGrid">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="ID" Value="frmExternalFiles2" />
+                                <Prop Key="Height" Value="100%" />
+                                <Prop Key="SkinID" Value="Inquire" />
+                                <Prop Key="Width" Value="100%" />
+                                <Prop Key="AutoSize.Enabled" Value="True" />
+                                <Prop Key="AutoSize.Container" Value="Parent" />
+                                <Prop Key="ActionBar.Actions.Refresh.Enabled" Value="False" />
+                                <Prop Key="DataSourceID" Value="ds" />
+                                <Children Key="Levels">
+                                    <AddItem>
+                                        <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
+                                            <Prop Key="DataMember" Value="ExternalFiles2" />
+                                            <Children Key="Columns">
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="Entity" />
+                                                        <Prop Key="Width" Value="70" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="Path" />
+                                                        <Prop Key="Width" Value="280" />
+                                                        <Prop Key="LinkCommand" Value="ActionRedirectToDirectory2" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="FileName" />
+                                                        <Prop Key="Width" Value="280" />
+                                                        <Prop Key="LinkCommand" Value="ActionRedirectToFile2" />
+                                                    </PXGridColumn>
+                                                </AddItem>
+                                            </Children>
+                                        </PXGridLevel>
+                                    </AddItem>
+                                </Children>
+                                <Children Key="ActionBar.CustomItems">
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionRefreshFileList2" />
+                                            <Prop Key="ImageKey" Value="Refresh" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionUploadFile2" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionDownloadFile2" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                </Children>
+                            </PXGrid>
+                        </AddItem>
+                        <AddItem>
+                            <PXPanel TypeFullName="PX.Web.UI.PXPanel">
+                                <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                <Prop Key="ID" Value="pnlExternalFilesBtn2" />
+                                <Prop Key="SkinID" Value="Buttons" />
+                                <Children Key="Controls">
+                                    <AddItem>
+                                        <PXButton TypeFullName="PX.Web.UI.PXButton">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="btnOKExternalFiles2" />
+                                            <Prop Key="Text" Value="OK" />
+                                            <Prop Key="DialogResult" Value="OK" />
+                                        </PXButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXButton TypeFullName="PX.Web.UI.PXButton">
+                                            <Prop Key="Virtual:ApplyStylesheetSkin" />
+                                            <Prop Key="ID" Value="btnCancelExternalFiles2" />
+                                            <Prop Key="Text" Value="Cancel" />
+                                            <Prop Key="DialogResult" Value="Cancel" />
+                                        </PXButton>
+                                    </AddItem>
+                                </Children>
+                            </PXPanel>
+                        </AddItem>
+                    </Children>
+                </PXSmartPanel>
+            </AddItem>
+            <AddItem>
+                <PXSmartPanel TypeFullName="PX.Web.UI.PXSmartPanel">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="Width" Value="50%" />
                     <Prop Key="ID" Value="pnlExternalFiles" />
                     <Prop Key="LoadOnDemand" Value="True" />
                     <Prop Key="CreateOnDemand" Value="True" />
@@ -29,6 +237,12 @@
                                         <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
                                             <Prop Key="DataMember" Value="ExternalFiles" />
                                             <Children Key="Columns">
+                                                <AddItem>
+                                                    <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                                                        <Prop Key="DataField" Value="Entity" />
+                                                        <Prop Key="Width" Value="70" />
+                                                    </PXGridColumn>
+                                                </AddItem>
                                                 <AddItem>
                                                     <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
                                                         <Prop Key="DataField" Value="Path" />
@@ -118,4 +332,24 @@
             <PXSmartPanel ID="InventoryMatrixLookupSmartPanel" OriginalIndex="7" />
         </Children>
     </Content>
+    <PXGrid ID="grid" ParentId="phG_tab_Items#0_grid" TypeFullName="PX.Web.UI.PXGrid">
+        <Children Key="ActionBar.CustomItems">
+            <AddItem>
+                <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                    <Prop Key="AutoCallBack.Target" Value="ds" />
+                    <Prop Key="AutoCallBack.Command" Value="ActionOpenFilesWindow2" />
+                </PXToolBarButton>
+            </AddItem>
+        </Children>
+    </PXGrid>
+    <PXGrid ID="ChangeOrdersGrid" ParentId="phG_tab_Items#8_ChangeOrdersGrid" TypeFullName="PX.Web.UI.PXGrid">
+        <Children Key="ActionBar.CustomItems">
+            <AddItem>
+                <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                    <Prop Key="AutoCallBack.Target" Value="ds" />
+                    <Prop Key="AutoCallBack.Command" Value="ActionOpenFilesWindow3" />
+                </PXToolBarButton>
+            </AddItem>
+        </Children>
+    </PXGrid>
 </Page>

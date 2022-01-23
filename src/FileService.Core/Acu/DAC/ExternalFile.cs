@@ -1,5 +1,6 @@
 ﻿
 using System;
+using FileService.Acu.Decorator;
 using PX.Data;
 using PX.Data.BQL;
 
@@ -15,11 +16,18 @@ namespace FileService.Acu.DAC
         public abstract class fileId : BqlLong.Field<fileId> { }
         #endregion
 
-
         #region RefNoteId
         [PXDBGuid()]
         public virtual Guid? RefNoteId { get; set; }
         public abstract class refNoteId : BqlGuid.Field<refNoteId> { }
+        #endregion
+
+        #region Entity
+        [PXDBString(EntityTypes.Length)]
+        [EntityTypes]
+        [PXUIField(DisplayName = "Entity")]
+        public virtual string Entity { get; set; }
+        public abstract class entity : BqlString.Field<entity> { }
         #endregion
 
         #region FileName

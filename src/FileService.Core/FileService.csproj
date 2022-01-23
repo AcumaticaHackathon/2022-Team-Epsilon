@@ -76,7 +76,8 @@
     <Compile Include="Acu\DAC\FileEntityMapping.cs" />
     <Compile Include="Acu\Decorator\EntityTypes.cs" />
     <Compile Include="Acu\Extensions\FileServiceExtensions.cs" />
-    <Compile Include="Acu\FileGraphExtension.cs" />
+    <Compile Include="Acu\FileGraphExtension2.cs" />
+    <Compile Include="Acu\FileGraphExtension1.cs" />
     <Compile Include="Acu\DAC\FileServicePreferences.cs" />
     <Compile Include="Acu\FileServiceCustMaint.cs" />
     <Compile Include="Acu\FileServicesPreferencesMaint.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Core\DirectoryListing.cs" />
     <Compile Include="Core\IExternalFileServiceProvider.cs" />
     <Compile Include="Core\TestProvider.cs" />
+    <Compile Include="Acu\FileGraphExtension3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

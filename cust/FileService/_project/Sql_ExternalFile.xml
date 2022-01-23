@@ -2,6 +2,7 @@
     <CDATA name="TableSchemaXml"><![CDATA[<table name="ExternalFile">
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="FileId" type="BigInt" identity="true" />
+  <col name="Entity" type="VarChar(4)" />
   <col name="RefNoteId" type="UniqueIdentifier" />
   <col name="FileName" type="NVarChar(256)" />
   <col name="Path" type="NVarChar(256)" />
