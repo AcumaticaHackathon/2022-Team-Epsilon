@@ -12,7 +12,7 @@ namespace FileService.Acu.Extensions
             if (string.IsNullOrWhiteSpace(preferences.PluginType))
                 throw new InvalidOperationException("No data fetcher type specified");
 
-            var type = Type.GetType(preferences.PluginType + $", {GetAssembly(preferences.PluginType)}");
+            var type = Type.GetType($"{preferences.PluginType}, FileService");
             if (type is null)
                 throw new InvalidOperationException("Type not found");
 
@@ -20,19 +20,5 @@ namespace FileService.Acu.Extensions
             return fetcher;
         }
 
-        private static string GetAssembly(string fullyQualified)
-        {
-            if (string.IsNullOrWhiteSpace(fullyQualified)) return "";
-            string[] namespaces = fullyQualified.Split('.');
-
-            string name = "";
-            for (int i = 0; i < 4; i++)
-            {
-                name += namespaces[i] + ".";
-            }
-
-            name = name.TrimEnd('.');
-            return name;
-        }
     }
 }

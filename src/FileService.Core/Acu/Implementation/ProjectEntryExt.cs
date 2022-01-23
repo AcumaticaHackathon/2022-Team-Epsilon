@@ -1,12 +1,4 @@
-﻿#region #Copyright
-//  ----------------------------------------------------------------------------------
-//   COPYRIGHT (c) 2022 CONTOU CONSULTING
-//   ALL RIGHTS RESERVED
-//   AUTHOR: Kyle Vanderstoep
-//   CREATED DATE: 2022/01/22
-// ----------------------------------------------------------------------------------
-#endregion
-
+﻿
 using PX.Data.WorkflowAPI;
 using PX.Objects.PM;
 using PX.Objects.PO;

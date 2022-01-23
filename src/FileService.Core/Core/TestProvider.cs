@@ -1,12 +1,4 @@
-﻿#region #Copyright
-//  ----------------------------------------------------------------------------------
-//   COPYRIGHT (c) 2022 CONTOU CONSULTING
-//   ALL RIGHTS RESERVED
-//   AUTHOR: Kyle Vanderstoep
-//   CREATED DATE: 2022/01/22
-// ----------------------------------------------------------------------------------
-#endregion
-
+﻿
 using System.Collections.Generic;
 using System.IO;
 
@@ -50,7 +42,7 @@ namespace FileService.Core
                 },
                 new DirectoryListing()
                 {
-                    Directory = @"\test\",
+                    Directory = @"\test\othertest",
                     FileName = "test3.txt",
                 }
             };

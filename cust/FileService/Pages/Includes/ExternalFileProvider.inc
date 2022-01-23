@@ -10,7 +10,13 @@
         </Levels>
         <AutoSize Enabled="True" Container="Parent"/>
         <ActionBar>
+            <Actions>
+                <Refresh Enabled="False">
+            </Actions>
             <CustomItems>
+                <px:PXToolBarButton ImageKey="Refresh" Text=" ">
+                    <AutoCallBack Command="ActionRefreshFileList" Target="ds"/>
+                </px:PXToolBarButton>
                 <px:PXToolBarButton>
                     <AutoCallBack Command="ActionUploadFile" Target="ds"/>
                 </px:PXToolBarButton>
@@ -21,9 +27,7 @@
         </ActionBar>
     </px:PXGrid>
     <px:PXPanel ID="pnlExternalFilesBtn" runat="server" SkinID="Buttons">
-        <px:PXButton ID="btnOKExternalFiles" runat="server" DialogResult="OK" Text="OK">
-            <AutoCallBack Target="frmExternalFiles" Command="Save"/>
-        </px:PXButton>
+        <px:PXButton ID="btnOKExternalFiles" runat="server" DialogResult="OK" Text="OK"/>
         <px:PXButton ID="btnCancelExternalFiles" runat="server" DialogResult="Cancel" Text="Cancel"/>
     </px:PXPanel>
 </px:PXSmartPanel>

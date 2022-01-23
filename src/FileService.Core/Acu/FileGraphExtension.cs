@@ -53,7 +53,9 @@ namespace FileService.Acu
         [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments")]
         public void actionOpenFilesWindow()
         {
-            ExternalFiles.AskExt(true);
+            if (ExternalFiles.AskExt(true) != WebDialogResult.OK) return;
+
+            Base.Actions.PressSave();
         }
 
         public PXAction<U> ActionRedirectToFile;
@@ -113,15 +115,38 @@ namespace FileService.Acu
 
             //Removing file from session to save memory
             System.Web.HttpContext.Current.Session.Remove(UploadFilesSessionKey);
-
-            Base.Actions.PressSave();
         }
 
         public PXAction<U> ActionRefreshFileList;
-        [PXButton(CommitChanges = true, ImageKey = Sprite.Main.Refresh), PXUIField(DisplayName = "Upload")]
+        [PXButton(CommitChanges = true, ImageKey = Sprite.Main.Refresh), PXUIField(DisplayName = "Refresh")]
         public void actionRefreshFileList()
         {
-            
+            IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
+            string path = PathBuilder.GetPath(GetEntityType(), Base);
+
+            var acuFiles = ExternalFiles.SelectMain().ToList();
+
+            foreach (DirectoryListing listing in provider.ListDirectory(path))
+            {
+                var match = acuFiles.FirstOrDefault(a => a.FileName == listing.FileName && a.Path == listing.Directory);
+                if (match is null)
+                {
+                    ExternalFiles.Insert(new ExternalFile()
+                    {
+                        FileName = listing.FileName,
+                        Path = listing.Directory
+                    });
+                }
+                else
+                {
+                    acuFiles.Remove(match);
+                }
+            }
+
+            foreach (ExternalFile file in acuFiles)
+            {
+                ExternalFiles.Delete(file);
+            }
         }
 
         private string GetEntityType()

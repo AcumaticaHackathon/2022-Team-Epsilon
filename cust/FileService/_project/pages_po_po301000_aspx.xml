@@ -51,6 +51,14 @@
                                     <AddItem>
                                         <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
                                             <Prop Key="AutoCallBack.Target" Value="ds" />
+                                            <Prop Key="AutoCallBack.Command" Value="ActionRefreshFileList" />
+                                            <Prop Key="ImageKey" Value="Refresh" />
+                                            <Prop Key="Text" />
+                                        </PXToolBarButton>
+                                    </AddItem>
+                                    <AddItem>
+                                        <PXToolBarButton TypeFullName="PX.Web.UI.PXToolBarButton">
+                                            <Prop Key="AutoCallBack.Target" Value="ds" />
                                             <Prop Key="AutoCallBack.Command" Value="ActionUploadFile" />
                                         </PXToolBarButton>
                                     </AddItem>
@@ -61,6 +69,7 @@
                                         </PXToolBarButton>
                                     </AddItem>
                                 </Children>
+                                <Prop Key="ActionBar.Actions.Refresh.Enabled" Value="False" />
                             </PXGrid>
                         </AddItem>
                         <AddItem>
@@ -74,8 +83,6 @@
                                             <Prop Key="Virtual:ApplyStylesheetSkin" />
                                             <Prop Key="Text" Value="OK" />
                                             <Prop Key="DialogResult" Value="OK" />
-                                            <Prop Key="AutoCallBack.Target" Value="frmExternalFiles" />
-                                            <Prop Key="AutoCallBack.Command" Value="Save" />
                                             <Prop Key="ID" Value="btnOKExternalFiles" />
                                         </PXButton>
                                     </AddItem>

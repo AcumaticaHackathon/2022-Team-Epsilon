@@ -1,11 +1,4 @@
-﻿#region #Copyright
-//  ----------------------------------------------------------------------------------
-//   COPYRIGHT (c) 2022 CONTOU CONSULTING
-//   ALL RIGHTS RESERVED
-//   AUTHOR: Kyle Vanderstoep
-//   CREATED DATE: 2022/01/22
-// ----------------------------------------------------------------------------------
-#endregion
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -58,7 +51,7 @@ namespace FileService.Acu.Helper
                 if (row is not null)
                 {
                     PXTrace.WriteInformation($"Row Found for: {fieldValue.Table}");
-                    fieldValue.Value = graph.Caches[fieldValue.Table].GetValue(row, fieldValue.Field).ToString();
+                    fieldValue.Value = graph.Caches[fieldValue.Table].GetValue(row, fieldValue.Field)?.ToString() ?? "";
                     PXTrace.WriteInformation($"Value Is: {fieldValue.Value}");
                 }
 

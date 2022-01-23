@@ -1,15 +1,8 @@
-﻿#region #Copyright
-//  ----------------------------------------------------------------------------------
-//   COPYRIGHT (c) 2022 CONTOU CONSULTING
-//   ALL RIGHTS RESERVED
-//   AUTHOR: Kyle Vanderstoep
-//   CREATED DATE: 2022/01/22
-// ----------------------------------------------------------------------------------
-#endregion
-
+﻿
 using System;
 using PX.Data;
 using PX.Objects.PM;
+using PX.Objects.PO;
 
 namespace FileService.Acu.Decorator
 {
@@ -34,6 +27,8 @@ namespace FileService.Acu.Decorator
             {
                 case PMProject:
                     return Project;
+                case POOrder:
+                    return PurchaseOrder;
                 default:
                     if (throwException)
                         throw new NotImplementedException($"{row.GetType().Name} is not implemented");

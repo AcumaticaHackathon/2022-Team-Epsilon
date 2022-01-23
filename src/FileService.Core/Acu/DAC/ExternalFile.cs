@@ -16,14 +16,14 @@ namespace FileService.Acu.DAC
         #endregion
 
         #region FileName
-        [PXDBString(256, IsUnicode = true)]
+        [PXDBString(256, IsUnicode = true, IsKey = true)]
         [PXUIField(DisplayName = "File Name")]
         public virtual string FileName { get; set; }
         public abstract class fileName : BqlString.Field<fileName> { }
         #endregion
 
         #region Path
-        [PXDBString(256, IsUnicode = true)]
+        [PXDBString(256, IsUnicode = true, IsKey = true)]
         [PXUIField(DisplayName = "Path")]
         public virtual string Path { get; set; }
         public abstract class path : BqlString.Field<path> { }
