@@ -28,6 +28,11 @@ namespace FileService.Acu
         [InjectDependency]
         public PathBuilder PathBuilder { get; set; }
 
+        public override void Initialize()
+        {
+            ExternalFiles.AllowUpdate = false;
+        }
+
         protected void _(Events.RowSelected<U> e)
         {
             if (e.Row is null) return;
