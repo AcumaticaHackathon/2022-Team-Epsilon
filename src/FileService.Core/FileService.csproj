@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-	  <LangVersion>9.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -66,10 +66,10 @@
       <HintPath>$(AcumaticaSiteDir)Bin\PX.Web.Customization.dll</HintPath>
       <SpecificVersion>false</SpecificVersion>
     </Reference>
-	<Reference Include="System.Web">
-	    <HintPath>$(AcumaticaSiteDir)Bin\System.Web.dll</HintPath>
-	    <SpecificVersion>false</SpecificVersion>
-	</Reference>
+    <Reference Include="System.Web">
+      <HintPath>$(AcumaticaSiteDir)Bin\System.Web.dll</HintPath>
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acu\DAC\ExternalFile.cs" />
@@ -81,7 +81,8 @@
     <Compile Include="Acu\FileServiceCustMaint.cs" />
     <Compile Include="Acu\FileServicesPreferencesMaint.cs" />
     <Compile Include="Acu\Helper\PathBuilder.cs" />
-    <Compile Include="Acu\Implementations.cs" />
+    <Compile Include="Acu\Implementation\ProjectEntryExt.cs" />
+    <Compile Include="Acu\Implementation\POOrderEntryExt.cs" />
     <Compile Include="Autofac\FileServiceModule.cs" />
     <Compile Include="Core\IExternalFileServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

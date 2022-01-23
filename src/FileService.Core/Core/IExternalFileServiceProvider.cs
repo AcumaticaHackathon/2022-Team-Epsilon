@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.IO;
 
 namespace FileService.Core
@@ -31,5 +32,12 @@ namespace FileService.Core
         /// </summary>
         /// <param name="path"></param>
         void CreateDirectory(string path);
+
+        /// <summary>
+        /// List the contents of a directory
+        /// </summary>
+        /// <param name="path">The location of the directory on the external resource</param>
+        /// <returns></returns>
+        IEnumerable<string> ListDirectory(string path);
     }
 }

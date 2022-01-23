@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService", "FileService.Core\FileService.csproj", "{AA70F829-BB1C-46B7-9927-484CB59B3380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService.Sharepoint", "FileService.Sharepoint\FileService.Sharepoint.csproj", "{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileService.OneDrive", "FileService.OneDrive\FileService.OneDrive.csproj", "{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{4FAC9CBE-EB57-4089-8086-1EBC59A96A82}"
 	ProjectSection(SolutionItems) = preProject

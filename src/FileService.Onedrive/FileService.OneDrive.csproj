@@ -8,8 +8,8 @@
     <ProjectGuid>{8A9EFF14-B61E-4932-9F8E-D8D8D8874D0A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FileService.Sharepoint</RootNamespace>
-    <AssemblyName>FileService.Sharepoint</AssemblyName>
+    <RootNamespace>FileService.OneDrive</RootNamespace>
+    <AssemblyName>FileService.OneDrive</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

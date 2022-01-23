@@ -17,10 +17,12 @@ namespace FileService.Acu.Decorator
     {
         public const int Length = 4;
         public const string Project = "PROJ";
+        public const string PurchaseOrder = "PO";
         
         public EntityTypes() : base(new []
         {
-            Pair(Project, "Project")
+            Pair(Project, "Project"),
+            Pair(PurchaseOrder, "Purchase Order")
         })
         {
             

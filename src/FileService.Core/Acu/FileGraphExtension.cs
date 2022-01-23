@@ -34,7 +34,7 @@ namespace FileService.Acu
             string entityType = EntityTypes.GetType(e.Row);
             bool enabled = Base.Select<FileEntityMapping>().Any(m => m.Entity == entityType && m.Active == true);
 
-            ActionOpenFiles.SetVisible(enabled);
+            // ActionOpenFiles.SetVisible(enabled);
         }
 
         protected void _(Events.RowInserting<ExternalFile> e)
@@ -44,16 +44,14 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionOpenFiles;
-        [PXUIField(DisplayName = "Attachments")]
-        [PXButton(CommitChanges = true)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Attachments", MapEnableRights = PXCacheRights.Select)]
         public void actionOpenFilesWindow()
         {
             ExternalFiles.AskExt(true);
         }
 
         public PXAction<U> ActionRedirectToFile;
-        [PXUIField(DisplayName = "View File")]
-        [PXButton(CommitChanges = true)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "View File", MapEnableRights = PXCacheRights.Select)]
         public void actionRedirectToFile()
         {
             var file = ExternalFiles.Current;
@@ -64,8 +62,7 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionDownloadFile;
-        [PXUIField(DisplayName = "Download")]
-        [PXButton(CommitChanges = true)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Download File", MapEnableRights = PXCacheRights.Select)]
         public void actionDownloadFile()
         {
             var fileRecord = ExternalFiles.Current;
@@ -79,15 +76,13 @@ namespace FileService.Acu
         }
 
         public PXAction<U> ActionUploadFile;
-        [PXUIField(DisplayName = "Upload")]
-        [PXButton(CommitChanges = true)]
+        [PXButton(CommitChanges = true), PXUIField(DisplayName = "Upload", MapEnableRights = PXCacheRights.Insert)]
         public void actionUploadFile()
         {
             if (FileServicePreferences.AskExt() != WebDialogResult.OK) return;
 
             PX.SM.FileInfo info = PXContext.SessionTyped<PXSessionStatePXData>().FileInfo[UploadFilesSessionKey] as PX.SM.FileInfo;
             MemoryStream stream = new MemoryStream(info.BinData);
-
 
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string path = PathBuilder.GetPath(GetEntityType(), Base);
