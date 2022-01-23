@@ -52,8 +52,8 @@ namespace FileService.OneDrive
             var parentId = GetParentFile(path, service);
 
             var listRequest = service.Files.List();
-            listRequest.Fields = "files/webViewLink";
-            listRequest.Q = $"'{parentId}' in parents and name = '{fileName}'";
+            listRequest.Fields = "files(webViewLink,id,name)";
+            listRequest.Q = $"'{parentId.Id}' in parents and name = '{fileName}'";
             var items = listRequest.Execute().Files.FirstOrDefault() ?? throw new InvalidOperationException("File does not exist");
 
             return items.WebViewLink;
@@ -148,7 +148,7 @@ namespace FileService.OneDrive
             foreach (string s in path.Trim('\\').Split('\\'))
             {
                 listRequest = service.Files.List();
-                listRequest.Fields = "files/webViewLink, id";
+                listRequest.Fields = "files(id,webViewLink,name)";
                 listRequest.Q = $"name = '{s}' and '{lastId}' in parents";
                 result = listRequest.Execute().Files.FirstOrDefault();
 

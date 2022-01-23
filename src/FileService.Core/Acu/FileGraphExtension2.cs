@@ -11,6 +11,7 @@ using PX.Common;
 using PX.Data;
 using PX.Data.BQL;
 using PX.Data.WorkflowAPI;
+using PX.Objects.PO;
 using PX.SM;
 using PX.Web.UI;
 
@@ -46,7 +47,7 @@ namespace FileService.Acu
         protected void _(Events.RowInserting<ExternalFile> e)
         {
             if (e.Row is null) return;
-            e.Row.RefNoteId = Base.Caches<U>().GetValue<V>(Base.Caches<U>().Current) as Guid?;
+            e.Row.RefNoteId = Base.Caches<POLine>().GetValue<V>(Base.Caches<POLine>().Current) as Guid?;
         }
 
         public PXAction<U> ActionOpenFilesWindow2;
@@ -137,7 +138,8 @@ namespace FileService.Acu
                     ExternalFiles2.Insert(new ExternalFile()
                     {
                         FileName = listing.FileName,
-                        Path = listing.Directory
+                        Path = listing.Directory,
+                        Entity = GetEntityType()
                     });
                 }
                 else
@@ -154,7 +156,7 @@ namespace FileService.Acu
 
         private string GetEntityType()
         {
-            var row = Base.Caches<U>().Current as IBqlTable;
+            var row = Base.Caches<POLine>().Current as IBqlTable;
             return EntityTypes.GetType(row);
         }
     }

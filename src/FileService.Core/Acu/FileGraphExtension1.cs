@@ -77,7 +77,7 @@ namespace FileService.Acu
         {
             var file = ExternalFiles.Current;
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
-            string url = provider.OpenFile(file.FileName, file.Path);
+            string url = provider.OpenDirectory(file.Path);
 
             throw new PXRedirectToUrlException(url, "");
         }
@@ -126,19 +126,24 @@ namespace FileService.Acu
         {
             IExternalFileServiceProvider provider = FileServicePreferences.Current.GetProvider();
             string path = PathBuilder.GetPath(GetEntityType(), Base);
+            string detailPath = PathBuilder.GetPath(EntityTypes.PurchaseOrderDetails, Base);
 
             var acuFiles = ExternalFiles.SelectMain().ToList();
 
             foreach (DirectoryListing listing in provider.ListDirectory(path))
             {
                 var match = acuFiles.FirstOrDefault(a => a.FileName == listing.FileName && a.Path == listing.Directory);
+                string entityType = string.Equals(listing.Directory, path)
+                    ? EntityTypes.PurchaseOrder
+                    : EntityTypes.PurchaseOrderDetails;
+
                 if (match is null)
                 {
                     ExternalFiles.Insert(new ExternalFile()
                     {
                         FileName = listing.FileName,
                         Path = listing.Directory,
-                        Entity = GetEntityType()
+                        Entity = entityType
                     });
                 }
                 else
